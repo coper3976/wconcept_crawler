@@ -7,7 +7,7 @@ my_header = {
     'accept': 'application/json, text/javascript, */*; q=0.01'
 }
 
-print(">>> Start Parsing")
+print("Start Parsing")
 resp = requests.get('https://www.wconcept.co.kr/Search?type=direct&kwd=%EC%A1%B0%EB%8D%98', headers=my_header)
 resp.encoding = ''
 bs = BeautifulSoup(resp.text, 'lxml')
