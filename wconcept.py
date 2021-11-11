@@ -19,7 +19,7 @@ product_db = dict()
 for div in divs:
     img = div.find('div', class_='img').img['src'].lstrip('//').replace('?RS=300', '')
     title = div.find('div', class_='product ellipsis multiline').text.strip()
-    price = div.find('div', class_='price').text.strip()
+    price = div.find('span', class_='discount_price').text.strip()
     productLink = 'https://www.wconcept.co.kr' + div.find('a', class_='')['href'].strip().replace('?rccode=pc_search', '')
     
     product_db[3] = [title, price, img] 
