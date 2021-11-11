@@ -17,12 +17,11 @@ divs = soup.find_all('li')
 
 product_db = dict()
 for div in divs:
-    img = div.find('div', class_='img').img['src'].strip().replace('?RS=300', '').lstrip('//')
+    img = div.find('div', class_='img').img['src'].lstrip('//').replace('?RS=300', '')
     title = div.find('div', class_='product ellipsis multiline').text.strip()
     price = div.find('div', class_='price').text.strip()
-
-    productLink = 'https://www.wconcept.co.kr' + div.find('a', class_='')['href']
+    productLink = 'https://www.wconcept.co.kr' + div.find('a', class_='')['href'].strip().replace('?rccode=pc_search', '')
     
-    product_db[title] = [title, price, img, productLink] 
+    product_db[3] = [title, price, img] 
 
-    print(product_db)
+    print(productLink)
